@@ -16,40 +16,40 @@ class WebComponentsService {
    * Return the polyfill standard method of application
    */
   public function getPolyfill($directory = '/') {
-    return `<!-- cross platform polyfill -->
+    return '<!-- cross platform polyfill -->
     <script>if (!window.customElements) { document.write("<!--") }</script>
-    <script defer="defer" type="text/javascript" src="` . $directory . `build/es6/node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+    <script defer="defer" type="text/javascript" src="' . $directory . 'build/es6/node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
     <!--! do not remove -->
-    <script defer="defer" src="` . $directory . `build/es6/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
-    <script defer="defer" src="` . $directory . `build/es6/node_modules/web-animations-js/web-animations-next-lite.min.js"></script>
-    <!-- / cross platform polyfill -->`;  
+    <script defer="defer" src="' . $directory . 'build/es6/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script defer="defer" src="' . $directory . 'build/es6/node_modules/web-animations-js/web-animations-next-lite.min.js"></script>
+    <!-- / cross platform polyfill -->';  
   }
   /**
    * Get babel helpers to ensure compiled versions have appropriate functions
    */
   public function getBabel($directory = '/') {
-    return `<!-- babel -->
-    <script src="` . $directory . `babel/babel-top.js"></script>
-    <script src="` . $directory . `babel/babel-bottom.js"></script>
-    <!-- / babel -->`;
+    return '<!-- babel -->
+    <script src="' . $directory . 'babel/babel-top.js"></script>
+    <script src="' . $directory . 'babel/babel-bottom.js"></script>
+    <!-- / babel -->';
   }
 
   /**
    * Front end logic for ES5 or ES6 version to deliver
    */
   public function getBuild($directory  = '/') {
-    return `<!-- web component build -->
+    return '<!-- web component build -->
     <script nomodule>window.nomodule = true;</script>
     <script>
-      function __supportsImports() { try { new Function('import("")'); return true; } catch (err) { return false; } }
+      function __supportsImports() { try { new Function(\'import("")\'); return true; } catch (err) { return false; } }
       // lack of es modules or dynamic imports requires amd-es5 bundle
       if (window.nomodule || !__supportsImports()) {
-        define(["` . $directory . `build/es5-amd/dist/build.js"], function () { "use strict" });
+        define(["' . $directory . 'build/es5-amd/dist/build.js"], function () { "use strict" });
         document.write("<!--")
       }
     </script>
-    <script type="module" defer="defer" src="` . $directory . `build/es6/dist/build.js"></script>
+    <script type="module" defer="defer" src="' . $directory . 'build/es6/dist/build.js"></script>
     <!--! do not remove -->
-    <!-- / web component build -->`;
+    <!-- / web component build -->';
   }
 }
