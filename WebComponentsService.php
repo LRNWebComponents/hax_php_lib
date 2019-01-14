@@ -44,11 +44,11 @@ class WebComponentsService {
       function __supportsImports() { try { new Function(\'import("")\'); return true; } catch (err) { return false; } }
       // lack of es modules or dynamic imports requires amd-es5 bundle
       if (window.nomodule || !__supportsImports()) {
-        define(["' . $directory . 'build/es5-amd/dist/build.js"], function () { "use strict" });
+        define(["' . $directory . 'build/es5-amd/build.js"], function () { "use strict" });
         document.write("<!--")
       }
     </script>
-    <script type="module" defer="defer" src="' . $directory . 'build/es6/dist/build.js"></script>
+    <script type="module" defer="defer" src="' . $directory . 'build/es6/build.js"></script>
     <!--! do not remove -->
     <!-- / web component build -->';
   }
