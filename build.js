@@ -9,7 +9,3 @@ import "@lrnwebcomponents/hax-body-behaviors/hax-body-behaviors.js";
 import "@lrnwebcomponents/cms-hax/cms-hax.js";
 // used in Grav, wysiwyg textarea drop in
 import "@lrnwebcomponents/wysiwyg-hax/wysiwyg-hax.js";
-// haxcms related elements
-import "@lrnwebcomponents/haxcms-elements/haxcms-elements.js";
-// desktop app integration stuff
-import "@lrnwebcomponents/app-editor-hax/app-editor-hax.js";
