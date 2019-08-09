@@ -1,0 +1,8 @@
+{
+  "name": "elmsln/hax_php_lib",
+  "description": "HAX php library of helper classes for serving appstore spec and integrations with web components",
+  "license": "Apache-2.0",
+  "require": {
+    "php": "^7.1"
+  }
+}
